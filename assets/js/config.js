@@ -24,12 +24,12 @@ window.SITE_CONFIG = {
        Saudi       05 1234 5678  ->  "966512345678"
        India       98765 43210   ->  "919876543210"
   ------------------------------------------------------------ */
-  whatsapp        : "8801712345678",
-  whatsappDisplay : "+880 1712-345678",
+  whatsapp        : "8801827801715",
+  whatsappDisplay : "+880 1827-801715",
 
   /* ---------- Phone / email ---------- */
-  phone        : "+8802-9876543",
-  phoneDisplay : "+880 2 9876 543",
+  phone        : "+8801827801715",
+  phoneDisplay : "+880 1827-801715",
   hotline      : "16247",
   email        : "info@skylinebridge.com",
   emailHr      : "recruitment@skylinebridge.com",

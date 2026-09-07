@@ -65,7 +65,12 @@ p:last-child{margin-bottom:0}
 .section--soft{background:var(--bg-soft)}
 .section--navy{background:var(--navy);color:#c3cede}
 .section--navy h2,.section--navy h3,.section--navy h4{color:#fff}
-.grid{display:grid;gap:var(--gap);counter-reset:s}   /* counter-reset so .step numbering
+.grid{display:grid;gap:var(--gap);counter-reset:s}
+/* Grid & flex items default to min-width:auto, so a long word or an image can
+   force a track wider than the screen. This is what caused sideways scrolling
+   on small phones (320px). */
+.grid > *,.split > *,.steps > *,.stats > *,.form-grid > *,.gal > *,
+.quickbar__card > *,.contact-grid > *,.split__media--stack > *,.btn-row > *{min-width:0}   /* counter-reset so .step numbering
                                                         works in a plain .grid too — without an
                                                         ancestor reset every step renders "01" */
 .g-2{grid-template-columns:repeat(2,1fr)}
@@ -218,12 +223,18 @@ body.no-scroll{overflow:hidden}
 .hero__stats{display:flex;flex-wrap:wrap;gap:34px;margin-top:44px;padding-top:30px;border-top:1px solid rgba(255,255,255,.18)}
 .hero__stat b{display:block;font-family:var(--font-head);font-size:1.85rem;font-weight:800;color:#fff;line-height:1.1}
 .hero__stat span{font-size:.85rem;color:#a8b6cb}
-.hero__dots{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);display:flex;gap:9px;z-index:2}
+.hero__dots{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;gap:2px;z-index:2}
+/* The visible dot is the ::before; the button itself is padded out to a
+   ~41px touch target so it is tappable on a phone. */
 .hero__dots button{
-  width:9px;height:9px;padding:0;border:0;border-radius:50%;cursor:pointer;
+  width:auto;height:auto;padding:16px 7px;border:0;background:none;cursor:pointer;
+  display:grid;place-items:center;line-height:0
+}
+.hero__dots button::before{
+  content:"";display:block;width:9px;height:9px;border-radius:50%;
   background:rgba(255,255,255,.42);transition:.25s
 }
-.hero__dots button.is-active{background:var(--gold);width:30px;border-radius:5px}
+.hero__dots button.is-active::before{background:var(--gold);width:30px;border-radius:5px}
 
 /* ---------- 8. Quick enquiry bar ---------- */
 .quickbar{position:relative;margin-top:-46px;z-index:5}
@@ -465,6 +476,11 @@ tbody tr:hover{background:#fbfcfe}
 .info-list b{display:block;color:#fff;font-family:var(--font-head);font-size:.95rem;margin-bottom:2px}
 .info-list a,.info-list p{font-size:.92rem;color:#a8b6cb;margin:0}
 .info-list a:hover{color:var(--gold)}
+/* the icon+text rows are flex: let the text column shrink and let a long
+   email / address wrap instead of pushing the card sideways */
+.info-list li > div{min-width:0}
+.info-list a,.info-list p,.info-list b{overflow-wrap:anywhere}
+.footer__contact li > span{min-width:0;overflow-wrap:anywhere}
 .map-frame{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);line-height:0}
 .map-frame iframe{width:100%;height:420px;border:0}
 /* address links keep the body colour until hovered */
@@ -544,6 +560,7 @@ tbody tr:hover{background:#fbfcfe}
 }
 @media (max-width:680px){
   :root{--gap:20px}
+  .footer__social a{width:42px;height:42px}   /* finger-sized on touch */
   body{font-size:16px}
   .topbar__in{justify-content:center;gap:12px}
   .topbar ul{gap:14px;justify-content:center}
@@ -559,5 +576,15 @@ tbody tr:hover{background:#fbfcfe}
   .badge-float{position:static;margin-top:16px;max-width:none}
   .fab{right:14px;bottom:14px}
   .fab a,.fab button{width:50px;height:50px}
+}
+@media (hover:none){
+  /* standalone call-to-action links get a finger-sized target on touch */
+  .link-arrow{padding:9px 0}
+  .footer__credit a[href]{display:inline-block;padding:4px 0}
+}
+@media (max-width:420px){
+  .wrap{width:min(100% - 28px,var(--wrap))}   /* a little more usable width */
+  .btn{white-space:normal;text-align:center}  /* long labels wrap instead of overflowing */
+  .hero .btn-row > .btn,.cta .btn-row > .btn{width:100%}
 }
 @media print{.header,.topbar,.fab,.footer__bottom{display:none}}
