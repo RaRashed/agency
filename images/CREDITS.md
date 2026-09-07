@@ -1,16 +1,34 @@
 # Demo Image Credits
 
-All placeholder photos are from **Unsplash** (free to use under the Unsplash License), with one
-exception noted below. Replace them with your own company photos — keep the same file names and
-everything keeps working.
+## ✅ No attribution needed, no licence obligations
 
-## ⚠️ One image needs attribution if you keep it
+Every photo on this site is from **Unsplash**, which is free for commercial use with no credit
+required. The one image that previously needed attribution (a Wikimedia photo of Doha) has been
+replaced, so there is now **nothing you have to credit anywhere**.
 
-`images/destinations/qatar-middle-east.jpg` — *Dhow with West Bay Skyline*, Doha.
-Licence **CC BY-SA 2.0** (source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Dhow_with_West_Bay_Skyline_(5314688251).jpg)).
-CC BY-SA requires you to credit the photographer and share adaptations under the same licence.
-**Easiest fix: replace this file with your own Qatar photo** and the obligation disappears.
-Every other image below is Unsplash-licensed and needs no credit.
+Replace any of them with your own photos — keep the same file name and the site picks it up
+automatically.
+
+## 👤 No faces
+
+The staff and client photos in `images/team/` are **generated placeholder avatars** (coloured tiles
+with initials), not photographs of real people. That is deliberate:
+
+> Unsplash licenses the photographer's copyright — it does **not** license the face of the person in
+> the photo, and Unsplash provides no model releases. Putting a stranger's face next to a name, a job
+> title, or a testimonial quote is a right-of-publicity problem that the photo licence does not cover.
+
+The rest of the photos were also chosen to avoid recognisable faces. Where people appear (workers on
+a site, a welder, hands at a desk) they are distant, turned away, or wearing safety gear — nobody is
+identifiable and nobody is named.
+
+**When you add real photos of your staff or clients, get their permission first** — a signed note or
+a WhatsApp message saying they are happy to appear on the company website is enough.
+
+| Placeholder | Shown as |
+|---|---|
+| `images/team/member-1.jpg` … `member-8.jpg` | Your 8 team members on the About page |
+| `images/team/client-1.jpg` … `client-3.jpg` | The 3 testimonial clients on the home page |
 
 ## Unsplash images
 
@@ -45,7 +63,7 @@ Every other image below is Unsplash-licensed and needs no credit.
 | `images/destinations/egypt.jpg` | https://unsplash.com/photos/1539768942893-daf53e448371 |
 | `images/destinations/himalaya-nepal.jpg` | https://unsplash.com/photos/1506905925346-21bda4d32df4 |
 | `images/destinations/spain.jpg` | https://unsplash.com/photos/1583422409516-2895a77efded |
-| `images/destinations/qatar-middle-east.jpg` | https://unsplash.com/photos/1572252009286-268acec5ca0a |
+| `images/destinations/qatar-middle-east.jpg` | https://unsplash.com/photos/1473580044384-7ba9967e16a0 |
 | `images/destinations/bali-mountains.jpg` | https://unsplash.com/photos/1469474968028-56623f02e42e |
 | `images/manpower/construction.jpg` | https://unsplash.com/photos/1504307651254-35680f356dfd |
 | `images/manpower/site-supervision.jpg` | https://unsplash.com/photos/1541888946425-d81bb19240f5 |
@@ -56,22 +74,14 @@ Every other image below is Unsplash-licensed and needs no credit.
 | `images/manpower/cleaning-facility.jpg` | https://unsplash.com/photos/1581578731548-c64695cc6952 |
 | `images/manpower/driving-transport.jpg` | https://unsplash.com/photos/1519003722824-194d4455a60c |
 | `images/manpower/agriculture.jpg` | https://unsplash.com/photos/1500937386664-56d1dfef3854 |
-| `images/manpower/engineering-technical.jpg` | https://unsplash.com/photos/1581091226825-a6a2a5aee158 |
-| `images/about/office-meeting.jpg` | https://unsplash.com/photos/1522071820081-009f0129c71c |
+| `images/manpower/engineering-technical.jpg` | https://unsplash.com/photos/1581092918056-0c4c3acd3789 |
+| `images/about/office-meeting.jpg` | https://unsplash.com/photos/1519389950473-47ba0277781c |
 | `images/about/partnership-handshake.jpg` | https://unsplash.com/photos/1521791136064-7986c2920216 |
-| `images/about/our-team.jpg` | https://unsplash.com/photos/1600880292203-757bb62b4baf |
+| `images/about/our-team.jpg` | https://unsplash.com/photos/1524758631624-e2822e304c36 |
 | `images/about/global-network.jpg` | https://unsplash.com/photos/1521295121783-8a321d551ad2 |
 | `images/about/travel-planning.jpg` | https://unsplash.com/photos/1488646953014-85cb44e25828 |
 | `images/about/corporate-building.jpg` | https://unsplash.com/photos/1486406146926-c627a92ad1ab |
 | `images/about/consultation.jpg` | https://unsplash.com/photos/1517245386807-bb43f82c33c4 |
-| `images/team/member-1.jpg` | https://unsplash.com/photos/1560250097-0b93528c311a |
-| `images/team/member-2.jpg` | https://unsplash.com/photos/1573497019940-1c28c88b4f3e |
-| `images/team/member-3.jpg` | https://unsplash.com/photos/1472099645785-5658abf4ff4e |
-| `images/team/member-4.jpg` | https://unsplash.com/photos/1494790108377-be9c29b29330 |
-| `images/team/member-5.jpg` | https://unsplash.com/photos/1507003211169-0a1dd7228f2d |
-| `images/team/member-6.jpg` | https://unsplash.com/photos/1580489944761-15a19d654956 |
-| `images/team/member-7.jpg` | https://unsplash.com/photos/1590650153855-d9e808231d41 |
-| `images/team/member-8.jpg` | https://unsplash.com/photos/1556157382-97eda2d62296 |
 | `images/gallery/gallery-01.jpg` | https://unsplash.com/photos/1436491865332-7a61a109cc05 |
 | `images/gallery/gallery-02.jpg` | https://unsplash.com/photos/1518684079-3c830dcef090 |
 | `images/gallery/gallery-03.jpg` | https://unsplash.com/photos/1541888946425-d81bb19240f5 |
@@ -80,7 +90,7 @@ Every other image below is Unsplash-licensed and needs no credit.
 | `images/gallery/gallery-06.jpg` | https://unsplash.com/photos/1504328345606-18bbc8c9d7d1 |
 | `images/gallery/gallery-07.jpg` | https://unsplash.com/photos/1512100356356-de1b84283e18 |
 | `images/gallery/gallery-08.jpg` | https://unsplash.com/photos/1596422846543-75c6fc197f07 |
-| `images/gallery/gallery-09.jpg` | https://unsplash.com/photos/1522071820081-009f0129c71c |
+| `images/gallery/gallery-09.jpg` | https://unsplash.com/photos/1497366754035-f200968a6e72 |
 | `images/gallery/gallery-10.jpg` | https://unsplash.com/photos/1502602898657-3e91760cbb34 |
 | `images/gallery/gallery-11.jpg` | https://unsplash.com/photos/1567789884554-0b844b597180 |
 | `images/gallery/gallery-12.jpg` | https://unsplash.com/photos/1525625293386-3f8f99389edd |

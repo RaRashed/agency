@@ -37,7 +37,12 @@ window.SITE_CONFIG = {
   /* ---------- Address ---------- */
   addressLine1 : "House 42 (4th Floor), Road 11, Banani",
   addressLine2 : "Dhaka 1213, Bangladesh",
-  mapQuery     : "Banani, Dhaka, Bangladesh",   // used by the Google Map embed
+  mapQuery     : "Banani, Dhaka, Bangladesh",   // used by the Google Map embed + address links
+
+  /* Optional but recommended: the exact pin for your office.
+     In Google Maps find your office → Share → Copy link → paste it below.
+     Leave it as "" and the site just searches for mapQuery instead. */
+  mapLink      : "",
 
   /* ---------- Opening hours ---------- */
   hours     : "Saturday – Thursday, 9:00 AM – 7:00 PM",
@@ -47,6 +52,14 @@ window.SITE_CONFIG = {
   licenseRL   : "RL-1234",
   licenseIATA : "IATA 12-3 4567 8",
   licenseATAB : "ATAB / BAIRA Member",
+
+  /* ---------- Footer credit ("Developed by ...") ----------
+     Set url to your website and the name becomes a link;
+     leave url as "" and it stays plain text. */
+  developer: {
+    name : "RARashed",
+    url  : ""
+  },
 
   /* ---------- Social links (leave "" to hide an icon) ---------- */
   social: {

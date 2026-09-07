@@ -31,6 +31,22 @@ whatsappDisplay : "+880 1712-345678",    // ← how it looks on the page
 - **No** `+`, **no** spaces, **no** dashes
 - **Drop the leading `0`** of your local number
 
+### 1b. Point the map at your office
+
+In `config.js`:
+
+```js
+mapQuery : "Banani, Dhaka, Bangladesh",   // used if mapLink is empty
+mapLink  : "",                            // ← paste your exact Google Maps link here
+```
+
+To get `mapLink`: open **Google Maps** → find your office → **Share** → **Copy link** → paste it in.
+That makes every address on the site open your exact pin instead of a rough area search.
+
+Clicking the address in the top bar, the footer, or on the Contact page now opens Google Maps.
+The Contact page also has **Get directions** and **Open in Google Maps** buttons under the map,
+and each branch office card links to its own location.
+
 ### 2. Fill in the rest of `config.js`
 
 Company name, phone, email, address, opening hours, licence numbers and social links all live in
@@ -41,6 +57,14 @@ floating WhatsApp button.
 
 Every image is a placeholder in the **`images/`** folder. Drop your own photo in, **keep the same
 file name**, and it appears on the site. No code change needed.
+
+**Photos of people:** the 11 files in `images/team/` are coloured tiles with initials, not real
+photographs. That is on purpose — a stock photo licence covers the photographer's copyright, not the
+face of the person in it, so a stranger's face must never sit next to a staff name or a testimonial
+quote. Replace them with photos of your actual team and actual clients, **with their permission**.
+
+Every other photo is Unsplash-licensed: free for commercial use, no credit required, nothing to
+attribute anywhere. Details in `images/CREDITS.md`.
 
 ```
 images/
@@ -117,6 +141,19 @@ The logo is an inline SVG in the header of each page. To use an image logo inste
 
 ---
 
+## ✏️ The "Developed by" credit
+
+The footer credit is set in `config.js`:
+
+```js
+developer: {
+  name : "RARashed",
+  url  : ""      // add your website and the name becomes a clickable link
+},
+```
+
+Leave `url` empty and it stays plain text.
+
 ## 🌐 Putting it online
 
 **Any of these work — the site is plain static files:**
@@ -149,7 +186,7 @@ python3 -m http.server 8000
 - [ ] Demo photos replaced with your own
 - [ ] Package names, descriptions and **prices** updated in `tour-packages.html` and `index.html`
 - [ ] Team names and photos updated in `about.html`
-- [ ] `images/CREDITS.md` read — one photo needs attribution unless you replace it
+- [ ] Team + testimonial **avatars replaced with real photos** (see below) — get each person's permission first
 - [ ] Office addresses on `contact.html` updated
 
 ---

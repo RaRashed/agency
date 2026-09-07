@@ -42,9 +42,20 @@
     addressLine1: C.addressLine1, addressLine2: C.addressLine2,
     address: [C.addressLine1, C.addressLine2].filter(Boolean).join(', '),
     hours: C.hours, hoursNote: C.hoursNote,
+    developer: (C.developer && C.developer.name) || '',
     licenseRL: C.licenseRL, licenseIATA: C.licenseIATA, licenseATAB: C.licenseATAB,
     year: new Date().getFullYear()
   };
+
+  /* Google Maps links. Uses the exact mapLink from config when it is set,
+     otherwise falls back to a plain Maps search for the address. */
+  function mapAddress() { return C.mapQuery || TEXT_MAP.address || ''; }
+  function mapUrl() {
+    return C.mapLink || 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(mapAddress());
+  }
+  function directionsUrl() {
+    return 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(mapAddress());
+  }
 
   function applyConfig() {
     $$('[data-site]').forEach(function (el) {
@@ -58,11 +69,26 @@
       else if (k === 'phone') href = 'tel:' + String(C.phone || '').replace(/[^\d+]/g, '');
       else if (k === 'email') href = 'mailto:' + (C.email || '');
       else if (k === 'emailHr') href = 'mailto:' + (C.emailHr || C.email || '');
+      else if (k === 'map') href = mapUrl();
+      else if (k === 'directions') href = directionsUrl();
+      else if (k === 'developer') {
+        var durl = (C.developer && C.developer.url) || '';
+        if (!durl) { el.removeAttribute('href'); return; }   /* no url -> plain text */
+        href = durl; el.setAttribute('target', '_blank'); el.setAttribute('rel', 'noopener');
+      }
       else if (C.social && C.social[k] !== undefined) {
         href = C.social[k];
         if (!href) { el.style.display = 'none'; return; }
       }
       if (href) el.setAttribute('href', href);
+    });
+
+    /* Any element with data-map-query becomes a Google Maps search link */
+    $$('[data-map-query]').forEach(function (a) {
+      a.setAttribute('href', 'https://www.google.com/maps/search/?api=1&query=' +
+        encodeURIComponent(a.getAttribute('data-map-query')));
+      a.setAttribute('target', '_blank');
+      a.setAttribute('rel', 'noopener');
     });
 
     /* Google Map embed */
