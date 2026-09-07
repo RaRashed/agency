@@ -31,8 +31,8 @@ window.SITE_CONFIG = {
   phone        : "+8801827801715",
   phoneDisplay : "+880 1827-801715",
   hotline      : "16247",
-  email        : "info@skylinebridge.com",
-  emailHr      : "recruitment@skylinebridge.com",
+  email        : "rnrashedrn@gmail.com",
+  emailHr      : "rnrashedrn@gmail.com",
 
   /* ---------- Address ---------- */
   addressLine1 : "House 42 (4th Floor), Road 11, Banani",
