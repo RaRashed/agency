@@ -97,9 +97,14 @@
         'https://www.google.com/maps?q=' + encodeURIComponent(C.mapQuery || TEXT_MAP.address || 'Dhaka') + '&output=embed');
     });
 
-    /* Page <title> / brand text that uses the token */
+    /* {{company}} token -> companyName, in the <title> and in any meta tag
+       that uses it (og:title, twitter:title, description, ...). */
     if (C.companyName) {
-      document.title = document.title.replace(/\{\{company\}\}/g, C.companyName);
+      var fill = function (t) { return String(t || '').replace(/\{\{company\}\}/g, C.companyName); };
+      document.title = fill(document.title);
+      $$('meta[content*="{{company}}"]').forEach(function (m) {
+        m.setAttribute('content', fill(m.getAttribute('content')));
+      });
     }
   }
 
